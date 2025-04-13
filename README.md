@@ -7,7 +7,7 @@ Este projeto contém os manifestos de infraestrutura como código do Tech Challe
 
 ### Arquitetura técnica
 
-![arquitetura-tecnica](docs/image/arq.png)
+![arquitetura-tecnica](docs/image/arquitetura-process-video2.png)
 
 #### Pré-requisitos e configuração de ambiente
 
