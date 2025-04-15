@@ -18,25 +18,30 @@ Abaixo, você encontrará informações sobre a arquitetura técnica, pré-requi
 - Terraform
 - Git
 - Credenciais AWS
-- Conta no Terraform HCP
+- [Conta no Terraform HCP](https://app.terraform.io/app/tc_fiap/workspaces)
 
 #### Passos para implementar o projeto usando uma conta da AWS Academy:
 
 1. Inicie o laboratório e visualize as credenciais da AWS Academy.
 2. Clique no botão "AWS Details" e, em seguida, pressione o botão "AWS CLI" para exibir as credenciais.
 3. Copie e cole o conteúdo das credenciais diretamente no terminal no diretório `~/.aws/credentials`.
-4. Atualize a opção "Settings > Variable Set" nos workspaces do HCP tc5-infra com os valores das credenciais AWS: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` e `AWS_SESSION_TOKEN`.
+4. Atualize a opção "Settings > Variable Set" nos workspaces do HCP **tc5-infra** com os valores das credenciais AWS: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` e `AWS_SESSION_TOKEN`.
 
-#### Comandos utilizados
+![image](docs/image/hcp-vars.png)
 
-- `terraform init` - comando usado para inicializar o Terraform no diretório local;
-- `terraform fmt` - formata os arquivos `.tf` corrigindo a indentação;
-- `terraform validate` - verifica se uma configuração é sintaticamente válida e internamente consistente, independentemente de quaisquer variáveis fornecidas ou estado existente;
-- `terraform plan` - cria o plano de execução para visualizar as alterações na infraestrutura do provedor.
 
 ### Integração com HCP
 
-Esta infraestrutura é provisionada usando o [HCP Terraform](https://developer.hashicorp.com/terraform/cloud-docs), que gerencia as execuções do Terraform em um ambiente consistente. Ele facilita a colaboração, permitindo que os membros da equipe compartilhem o acesso e iterem no estado do Terraform facilmente. Cada componente do time precisa ter uma conta na plataforma para contribuir efetivamente.
+Esta infraestrutura é provisionada utilizando o [HCP Terraform](https://developer.hashicorp.com/terraform/cloud-docs), uma plataforma que centraliza e gerencia as execuções do Terraform em um ambiente controlado e consistente. O HCP Terraform simplifica a colaboração entre equipes, permitindo o compartilhamento seguro de estados e configurações, além de oferecer melhor visualização com histórico de mudanças e logs. Para contribuir efetivamente, cada membro da equipe deve possuir uma conta na plataforma e estar devidamente configurado para acessar os workspaces do projeto.
 
-#### Plan and Apply
+![image](docs/image/hcp-tc5-infra.png)
+
+#### Plan e Apply
+
 Cada `push` para o repositório aciona um plan do Terraform que informa as possíveis alterações na infraestrutura. Após o `merge`, outro plan é executado no Terraform, seguido por um `apply`. Você pode acompanhar essas ações clicando nas verificações do GitHub, que redireciona para a plataforma HCP, onde é possível ter informações e logs detalhados sobre o processo de atualização.
+
+> Comandos utilizados
+> - `terraform init` - comando usado para inicializar o Terraform no diretório local;
+> - `terraform fmt` - formata os arquivos `.tf` corrigindo a indentação;
+> - `terraform validate` - verifica se uma configuração é sintaticamente válida e internamente consistente, independentemente de quaisquer variáveis fornecidas ou estado existente;
+>- `terraform plan` - cria o plano de execução para visualizar as alterações na infraestrutura do provedor.
