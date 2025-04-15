@@ -1,9 +1,13 @@
 # tc5-infra
-Este projeto contém os manifestos de infraestrutura como código do Tech Challenge 5, escritos em Terraform para provisionamento dos recursos da AWS, como:
-- S3
-- Cognito
-- DynamoDB
-- EKS
+
+Este repositório contém os manifestos de infraestrutura como código do Tech Challenge 5, desenvolvidos em Terraform para provisionar recursos na AWS. O objetivo é fornecer uma base robusta e escalável para o processamento de vídeos, utilizando os seguintes serviços:
+
+- **S3**: Armazenamento de vídeos a serem processados.
+- **Cognito**: Gerenciamento de autenticação e autorização.
+- **DynamoDB**: Banco de dados não relacional para armazenar dados e status do processamento.
+- **EKS**: Plataforma Kubernetes para orquestração de containers de microsserviços.
+
+Abaixo, você encontrará informações sobre a arquitetura técnica, pré-requisitos, configuração do ambiente e os comandos necessários para implementar o projeto.
 
 ### Arquitetura técnica
 
@@ -28,3 +32,10 @@ Este projeto contém os manifestos de infraestrutura como código do Tech Challe
 - `terraform fmt` - formata os arquivos `.tf` corrigindo a indentação;
 - `terraform validate` - verifica se uma configuração é sintaticamente válida e internamente consistente, independentemente de quaisquer variáveis fornecidas ou estado existente;
 - `terraform plan` - cria o plano de execução para visualizar as alterações na infraestrutura do provedor.
+
+### Integração com HCP
+
+Esta infraestrutura é provisionada usando o [HCP Terraform](https://developer.hashicorp.com/terraform/cloud-docs), que gerencia as execuções do Terraform em um ambiente consistente. Ele facilita a colaboração, permitindo que os membros da equipe compartilhem o acesso e iterem no estado do Terraform facilmente. Cada componente do time precisa ter uma conta na plataforma para contribuir efetivamente.
+
+#### Plan and Apply
+Cada `push` para o repositório aciona um plan do Terraform que informa as possíveis alterações na infraestrutura. Após o `merge`, outro plan é executado no Terraform, seguido por um `apply`. Você pode acompanhar essas ações clicando nas verificações do GitHub, que redireciona para a plataforma HCP, onde é possível ter informações e logs detalhados sobre o processo de atualização.
