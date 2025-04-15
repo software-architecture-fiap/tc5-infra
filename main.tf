@@ -12,7 +12,7 @@ terraform {
       version = "~> 5.70.0"
     }
   }
-    required_version = ">= 1.2"
+  required_version = ">= 1.2"
 }
 
 provider "aws" {
@@ -20,15 +20,15 @@ provider "aws" {
 }
 
 module "s3" {
-    source = "./s3"
+  source = "./s3"
 }
 
 module "sqs" {
-    source = "./sqs"
+  source = "./sqs"
 }
 
 module "cognito" {
-    source = "./cognito"
+  source = "./cognito"
 }
 
 # module "dynamodb" {
@@ -36,5 +36,5 @@ module "cognito" {
 # }
 
 module "eks" {
-    source = "./eks"
+  source = "./eks"
 }
