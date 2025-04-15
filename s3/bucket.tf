@@ -5,7 +5,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "repo-videos" {
   provider      = aws.us_east
-  bucket        = "repo-videos"
+  bucket        = "repo-videos-upload"
   force_destroy = true
 }
 
