@@ -18,13 +18,14 @@ Abaixo, você encontrará informações sobre a arquitetura técnica, pré-requi
 - Terraform
 - Git
 - Credenciais AWS
+- Conta no Terraform HCP
 
 #### Passos para implementar o projeto usando uma conta da AWS Academy:
 
 1. Inicie o laboratório e visualize as credenciais da AWS Academy.
 2. Clique no botão "AWS Details" e, em seguida, pressione o botão "AWS CLI" para exibir as credenciais.
 3. Copie e cole o conteúdo das credenciais diretamente no terminal no diretório `~/.aws/credentials`.
-4. Atualize a opção "Settings > Variable Set" nos workspaces do HCP infra-kitchen com os valores das credenciais AWS: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` e `AWS_SESSION_TOKEN`.
+4. Atualize a opção "Settings > Variable Set" nos workspaces do HCP tc5-infra com os valores das credenciais AWS: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` e `AWS_SESSION_TOKEN`.
 
 #### Comandos utilizados
 
