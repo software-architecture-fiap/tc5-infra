@@ -31,9 +31,9 @@ module "cognito" {
     source = "./cognito"
 }
 
-module "dynamodb" {
-    source = "./dynamodb"
-}
+# module "dynamodb" {
+#     source = "./dynamodb"
+# }
 
 module "eks" {
     source = "./eks"

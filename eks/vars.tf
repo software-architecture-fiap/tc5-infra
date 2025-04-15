@@ -11,7 +11,7 @@ variable "project_name" {
 
 variable "account_id" {
   description = "The AWS account ID"
-  default     = "147671223315" # Atualizar com o ID correto
+  default     = "590183668157" # Atualizar com o ID correto
   type        = string
 }
 
@@ -23,7 +23,7 @@ variable "policy_arn" {
 
 variable "vpc_cidr" {
   description = "The CIDR block for the VPC"
-  default     = "10.0.0.0/16"
+  default     = "172.31.0.0/16"
   type        = string
 }
 

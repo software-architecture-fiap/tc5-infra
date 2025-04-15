@@ -2,9 +2,9 @@ data "aws_iam_role" "eks_labrole" {
   name = "LabRole"
 }
 
-data "aws_iam_role" "voclabs_role" {
-  name = "voclabs"
-}
+# data "aws_iam_role" "voclabs_role" {
+#   name = "voclabs"
+# }
 
 data "aws_subnets" "eks_subnets" {
   filter {
